@@ -1,0 +1,76 @@
+base_configs:
+  - ../train/align.yaml
+
+experiment_name: p3_align_v2
+output_dir: outputs/p3_align_v2
+
+dataset:
+  train_split_csv: data/processed/splits/p3_train.csv
+  val_split_csv: data/processed/splits/p3_val.csv
+  test_split_csv: data/processed/splits/p3_test.csv
+
+model:
+  macro_num_classes: 100
+  micro_num_classes: 50
+
+warmstart:
+  macro_checkpoint: outputs/p3_baseline_macro/checkpoints/best.ckpt
+  micro_checkpoint: outputs/p3_baseline_micro/checkpoints/best.ckpt
+  strict: false
+
+optimizer:
+  macro_encoder_lr: 0.000005
+  micro_encoder_lr: 0.00004
+  macro_projection_lr: 0.00005
+  micro_projection_lr: 0.0001
+  macro_classifier_lr: 0.00001
+  micro_classifier_lr: 0.00005
+
+training:
+  max_epochs: 16
+  best_metric: macro_balanced_accuracy
+  best_metric_mode: max
+  best_metric_weights:
+    macro: 0.8
+    micro: 0.2
+  max_eval_batches: null
+
+loss:
+  taxonomy_similarity_floor: 0.35
+  taxonomy_pair_weight: 1.0
+  relaxed_negative_weight: 0.35
+
+stages:
+  - name: warmup_macro_prioritized
+    # Conservative P3 v2 choice:
+    # freeze both macro encoder and macro classifier so the 100-class macro
+    # baseline remains fixed while the micro branch settles around it.
+    epochs: 2
+    lambda_macro_ce: 1.0
+    lambda_micro_ce: 0.4
+    lambda_supcon: 0.0
+    lambda_tax: 0.0
+    relation_policy: exact_only
+    freeze_macro_encoder_epochs: 2
+    freeze_macro_classifier_epochs: 2
+  - name: exact_alignment_main
+    # Introduce only weak exact-species alignment first, while keeping the
+    # macro side conservative and delaying any genus-aware signal.
+    epochs: 10
+    lambda_macro_ce: 1.0
+    lambda_micro_ce: 0.4
+    lambda_supcon: 0.01
+    lambda_tax: 0.0
+    relation_policy: exact_only
+    freeze_macro_encoder_epochs: 1
+    freeze_macro_classifier_epochs: 0
+  - name: late_genus_soft_refine
+    # Add only weak genus-aware structure late in training.
+    epochs: 4
+    lambda_macro_ce: 1.0
+    lambda_micro_ce: 0.4
+    lambda_supcon: 0.01
+    lambda_tax: 0.01
+    relation_policy: exact_plus_genus_soft
+    freeze_macro_encoder_epochs: 0
+    freeze_macro_classifier_epochs: 0

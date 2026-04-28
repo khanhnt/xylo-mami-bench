@@ -1,0 +1,20 @@
+base_configs:
+  - ./p3_baseline_macro.yaml
+
+experiment_name: p3_baseline_macro_rgbgray_fusion
+output_dir: outputs/p3_baseline_macro_rgbgray_fusion
+
+dataset:
+  batch_size: 8
+  eval_batch_size: 16
+
+model:
+  architecture: rgbgray_late_fusion
+  fusion_hidden_dim: 768
+  fusion_dropout: 0.1
+  fusion_residual_scale: 0.1
+
+warmstart:
+  rgb_checkpoint: outputs/p3_baseline_macro/checkpoints/best.ckpt
+  gray_checkpoint: outputs/p3_baseline_macro_grayscale/checkpoints/best.ckpt
+  strict: false

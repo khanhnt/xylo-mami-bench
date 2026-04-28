@@ -1,0 +1,145 @@
+experiment_name: align
+seed: 42
+output_dir: outputs/align
+device: auto
+
+dataset:
+  train_split_csv: data/processed/splits/p1_train.csv
+  val_split_csv: data/processed/splits/p1_val.csv
+  test_split_csv: data/processed/splits/p1_test.csv
+  image_size: 384
+  input_mode: rgb
+  macro_input_mode: null
+  micro_input_mode: null
+  batch_size: 64
+  eval_batch_size: 64
+  num_workers: 4
+  image_root_override:
+    macro: null
+    micro: null
+  sampler:
+    classes_per_batch: 8
+    paired_species_per_batch: 4
+    min_cross_modal_pairs: 2
+    target_macro_fraction: 0.5
+    inverse_frequency_power: 0.5
+    drop_last: false
+
+model:
+  architecture: standard
+  macro_backbone_name: convnext_small
+  micro_backbone_name: convnext_small
+  macro_gray_backbone_name: null
+  micro_gray_backbone_name: null
+  macro_num_classes: 33
+  micro_num_classes: 33
+  pretrained: true
+  macro_pretrained: null
+  micro_pretrained: null
+  macro_gray_pretrained: null
+  micro_gray_pretrained: null
+  projection_hidden_dims: [512]
+  macro_projection_dim: 256
+  micro_projection_dim: 256
+  projection_dropout: 0.1
+  classifier_dropout: 0.2
+  fusion_hidden_dim: null
+  macro_fusion_hidden_dim: null
+  micro_fusion_hidden_dim: null
+  fusion_dropout: 0.0
+  fusion_residual_scale: 0.1
+  fusion_mode: residual
+  freeze_macro_backbone: false
+  freeze_micro_backbone: false
+  macro_trainable_backbone_patterns: []
+  micro_trainable_backbone_patterns: []
+
+warmstart:
+  macro_checkpoint: null
+  micro_checkpoint: null
+  macro_rgb_checkpoint: null
+  macro_gray_checkpoint: null
+  micro_rgb_checkpoint: null
+  micro_gray_checkpoint: null
+  strict: false
+
+optimizer:
+  macro_encoder_lr: 0.00003
+  micro_encoder_lr: 0.00003
+  projection_lr: 0.0003
+  classifier_lr: 0.0003
+  betas: [0.9, 0.999]
+  eps: 0.00000001
+  weight_decay: 0.05
+
+scheduler:
+  min_lr_ratio: 0.01
+  warmup_steps: null
+  warmup_epochs: 3
+
+training:
+  max_epochs: 24
+  max_steps: null
+  amp: true
+  grad_clip_norm: 1.0
+  log_every_n_steps: 20
+  validate_every_n_epochs: 1
+  save_every_n_epochs: 1
+  early_stopping_patience: 8
+  early_stopping_min_delta: 0.0
+  best_metric: weighted_mean_balanced_accuracy
+  best_metric_mode: max
+  best_metric_weights:
+    macro: 0.7
+    micro: 0.3
+  max_eval_batches: null
+  resume_from: null
+
+loss:
+  macro_label_smoothing: 0.1
+  micro_label_smoothing: 0.1
+  macro_class_weights: null
+  micro_class_weights: null
+  supcon_temperature: 0.07
+  supcon_base_temperature: 0.07
+  taxonomy_similarity_floor: 0.35
+  taxonomy_pair_weight: 1.0
+  relaxed_negative_weight: 0.35
+  rgbgray_consistency_weight: 0.0
+
+stages:
+  - name: warmup_macro_prioritized
+    epochs: 4
+    lambda_macro_ce: 1.0
+    lambda_micro_ce: 0.5
+    lambda_supcon: 0.0
+    lambda_tax: 0.0
+    relation_policy: exact_only
+  - name: exact_alignment
+    epochs: 8
+    lambda_macro_ce: 1.0
+    lambda_micro_ce: 1.0
+    lambda_supcon: 0.5
+    lambda_tax: 0.0
+    relation_policy: exact_only
+  - name: relaxed_genus_refine
+    epochs: 12
+    lambda_macro_ce: 1.0
+    lambda_micro_ce: 1.0
+    lambda_supcon: 0.75
+    lambda_tax: 0.05
+    relation_policy: exact_plus_genus_relaxed_negative
+
+evaluation:
+  checkpoint_path: null
+  split_csv: null
+  split_name: test
+  dump_embeddings: false
+
+genus_aux:
+  enabled: false
+  loss_weight: 0.0
+  macro_weight: 1.0
+  micro_weight: 1.0
+  dropout: 0.0
+  label_smoothing: 0.0

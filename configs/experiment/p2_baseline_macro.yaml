@@ -1,0 +1,21 @@
+base_configs:
+  - ../train/baseline.yaml
+
+experiment_name: p2_baseline_macro
+output_dir: outputs/p2_baseline_macro
+
+dataset:
+  mode: macro_classification
+  train_split_csv: data/processed/splits/p2_train.csv
+  val_split_csv: data/processed/splits/p2_val.csv
+  test_split_csv: data/processed/splits/p2_test.csv
+  image_size: 384
+  batch_size: 16
+  eval_batch_size: 32
+
+model:
+  backbone_name: convnext_small
+  num_classes: 55
+
+evaluation:
+  split_name: test

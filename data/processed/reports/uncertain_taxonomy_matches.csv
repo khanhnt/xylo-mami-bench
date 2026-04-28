@@ -1,0 +1,18 @@
+dataset_name,modality,raw_species_name,normalized_species_name,genus,protocol_group,overlap_type,protocol_usage,taxonomy_match_status,matched_species_name,taxonomy_suggestions,image_count
+micro_congo,micro,Afzelia bipindensis,Afzelia bipindensis,Afzelia,B,genus_overlap_only,"P2,P3",genus_match_only,,Afzelia africana|Afzelia quanzensis|Afzelia bella,11
+micro_congo,micro,Afzelia cuanzensis,Afzelia cuanzensis,Afzelia,B,genus_overlap_only,"P2,P3",genus_match_only,,Afzelia africana|Afzelia quanzensis|Afzelia bella,9
+micro_congo,micro,Albizia antunesiana,Albizia antunesiana,Albizia,B,genus_overlap_only,"P2,P3",genus_match_only,,Albizia chinensis|Albizia glaberrima|Albizia adianthifolia,16
+micro_congo,micro,Amphimas ferrugineus,Amphimas ferrugineus,Amphimas,B,genus_overlap_only,"P2,P3",genus_match_only,,Amphimas pterocarpoides,9
+micro_congo,micro,Anthonotha macrophylla,Anthonotha macrophylla,Anthonotha,B,genus_overlap_only,"P2,P3",genus_match_only,,Anthonotha fragrans,9
+micro_congo,micro,Antrocaryon nannanii,Antrocaryon nannanii,Antrocaryon,B,genus_overlap_only,"P2,P3",genus_match_only,,Antrocaryon micraster,27
+micro_congo,micro,Celtis gomphophylla,Celtis gomphophylla,Celtis,B,genus_overlap_only,"P2,P3",genus_match_only,,Celtis adolfi-friderici|Celtis mildbraedii,16
+micro_congo,micro,Chrysophyllum africanum,Chrysophyllum africanum,Chrysophyllum,B,genus_overlap_only,"P2,P3",genus_match_only,,Chrysophyllum perpulchrum,7
+micro_congo,micro,Chrysophyllum lacourtianum,Chrysophyllum lacourtianum,Chrysophyllum,B,genus_overlap_only,"P2,P3",genus_match_only,,Chrysophyllum perpulchrum,9
+micro_congo,micro,Diospyros crassiflora,Diospyros crassiflora,Diospyros,B,genus_overlap_only,"P2,P3",genus_match_only,,Diospyros salletii,12
+micro_congo,micro,Entandrophragma candollei,Entandrophragma candollei,Entandrophragma,B,genus_overlap_only,"P2,P3",genus_match_only,,Entandrophragma angolense|Entandrophragma cylindricum|Entandrophragma utile,15
+micro_congo,micro,Erythrophleum suaveolens,Erythrophleum suaveolens,Erythrophleum,B,genus_overlap_only,"P2,P3",genus_match_only,,Erythrophleum ivorense,14
+micro_congo,micro,Guibourtia demeusei,Guibourtia demeusei,Guibourtia,B,genus_overlap_only,"P2,P3",genus_match_only,,Guibourtia arnoldiana|Guibourtia coleosperma,14
+micro_congo,micro,Khaya anthotheca,Khaya anthotheca,Khaya,B,genus_overlap_only,"P2,P3",genus_match_only,,Khaya grandifoliola|Khaya ivorensis|Khaya senegalensis,23
+micro_congo,micro,Nesogordonia kabingaensis,Nesogordonia kabingaensis,Nesogordonia,B,genus_overlap_only,"P2,P3",genus_match_only,,Nesogordonia papaverifera,9
+micro_congo,micro,Pterocarpus tinctorius,Pterocarpus tinctorius,Pterocarpus,B,genus_overlap_only,"P2,P3",genus_match_only,,Pterocarpus erinaceus|Pterocarpus macrocarpus|Pterocarpus soyauxii,21
+micro_congo,micro,Zanthoxylum lemairei,Zanthoxylum lemairei,Zanthoxylum,B,genus_overlap_only,"P2,P3",genus_match_only,,Zanthoxylum gilletii,16

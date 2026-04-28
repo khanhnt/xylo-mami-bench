@@ -1,0 +1,20 @@
+base_configs:
+  - ./p3_align_v2_rgbgray_fusion.yaml
+
+experiment_name: p3_align_v3_rgbgray_gated
+output_dir: outputs/p3_align_v3_rgbgray_gated
+
+dataset:
+  batch_size: 32
+  eval_batch_size: 24
+  sampler:
+    classes_per_batch: 8
+    paired_species_per_batch: 3
+
+model:
+  fusion_mode: gated
+
+loss:
+  # Encourage the RGB and grayscale views of the same image to agree in
+  # pooled feature space while keeping the main supervision unchanged.
+  rgbgray_consistency_weight: 0.05

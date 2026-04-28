@@ -1,0 +1,90 @@
+{
+  "actual_ratios": {
+    "test": 0.149996,
+    "train": 0.700169,
+    "val": 0.149835
+  },
+  "group_count": 499,
+  "protocol": "p1",
+  "ratios": {
+    "test": 0.15,
+    "train": 0.7,
+    "val": 0.15
+  },
+  "seed": 42,
+  "species_count": 33,
+  "split_summaries": {
+    "test": {
+      "actual_ratio": 0.149996,
+      "class_balance": {
+        "max_samples_per_species": 131,
+        "mean_samples_per_species": 56.5758,
+        "median_samples_per_species": 46,
+        "min_samples_per_species": 1,
+        "present_species_count": 33
+      },
+      "macro_phase_counts": {
+        "Phase1": 933,
+        "Phase2": 836
+      },
+      "modality_counts": {
+        "macro": 1769,
+        "micro": 98
+      },
+      "sample_count": 1867,
+      "species_count": 33,
+      "target_sample_count": 1867.05
+    },
+    "train": {
+      "actual_ratio": 0.700169,
+      "class_balance": {
+        "max_samples_per_species": 378,
+        "mean_samples_per_species": 264.0909,
+        "median_samples_per_species": 287,
+        "min_samples_per_species": 91,
+        "present_species_count": 33
+      },
+      "macro_phase_counts": {
+        "Phase1": 2929,
+        "Phase2": 5449
+      },
+      "modality_counts": {
+        "macro": 8378,
+        "micro": 337
+      },
+      "sample_count": 8715,
+      "species_count": 33,
+      "target_sample_count": 8712.9
+    },
+    "val": {
+      "actual_ratio": 0.149835,
+      "class_balance": {
+        "max_samples_per_species": 136,
+        "mean_samples_per_species": 56.5152,
+        "median_samples_per_species": 43,
+        "min_samples_per_species": 1,
+        "present_species_count": 33
+      },
+      "macro_phase_counts": {
+        "Phase1": 1023,
+        "Phase2": 740
+      },
+      "modality_counts": {
+        "macro": 1763,
+        "micro": 102
+      },
+      "sample_count": 1865,
+      "species_count": 33,
+      "target_sample_count": 1867.05
+    }
+  },
+  "total_samples": 12447,
+  "warnings": {
+    "classes_in_train_but_missing_from_test": [],
+    "classes_in_train_but_missing_from_val": [],
+    "classes_with_too_few_groups_for_full_coverage": [],
+    "classes_with_too_few_samples_for_nonzero_holdout": [],
+    "modality_warnings": [],
+    "ratio_imperfections": []
+  }
+}

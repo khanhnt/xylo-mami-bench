@@ -1,0 +1,12 @@
+base_configs:
+  - ./p1_align_v2.yaml
+
+experiment_name: p1_align_v2_grayscale
+output_dir: outputs/p1_align_v2_grayscale
+
+dataset:
+  input_mode: grayscale
+
+warmstart:
+  macro_checkpoint: outputs/p1_baseline_macro_grayscale/checkpoints/best.ckpt
+  micro_checkpoint: outputs/p1_baseline_micro_grayscale/checkpoints/best.ckpt

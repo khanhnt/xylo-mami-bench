@@ -1,0 +1,8 @@
+base_configs:
+  - ./p3_baseline_macro.yaml
+
+experiment_name: p3_baseline_macro_grayscale
+output_dir: outputs/p3_baseline_macro_grayscale
+
+dataset:
+  input_mode: grayscale

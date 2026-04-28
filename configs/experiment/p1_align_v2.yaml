@@ -1,0 +1,77 @@
+base_configs:
+  - ../train/align.yaml
+
+experiment_name: p1_align_v2
+output_dir: outputs/p1_align_v2
+
+dataset:
+  train_split_csv: data/processed/splits/p1_train.csv
+  val_split_csv: data/processed/splits/p1_val.csv
+  test_split_csv: data/processed/splits/p1_test.csv
+
+model:
+  macro_num_classes: 33
+  micro_num_classes: 33
+
+warmstart:
+  macro_checkpoint: outputs/p1_baseline_macro/checkpoints/best.ckpt
+  micro_checkpoint: outputs/p1_baseline_micro/checkpoints/best.ckpt
+  strict: false
+
+optimizer:
+  macro_encoder_lr: 0.000005
+  micro_encoder_lr: 0.00003
+  macro_projection_lr: 0.00005
+  micro_projection_lr: 0.0001
+  macro_classifier_lr: 0.00001
+  micro_classifier_lr: 0.00005
+
+training:
+  max_epochs: 13
+  best_metric: macro_balanced_accuracy
+  best_metric_mode: max
+  best_metric_weights:
+    macro: 1.0
+    micro: 0.0
+  max_eval_batches: null
+
+loss:
+  taxonomy_similarity_floor: 0.35
+  taxonomy_pair_weight: 1.0
+  relaxed_negative_weight: 0.35
+
+stages:
+  - name: warmup_macro_prioritized
+    # Conservative P1 v2 choice:
+    # freeze both macro encoder and macro classifier so the warm-started macro
+    # baseline stays fixed while the micro branch and future projection space
+    # settle around it.
+    epochs: 2
+    lambda_macro_ce: 1.0
+    lambda_micro_ce: 0.5
+    lambda_supcon: 0.0
+    lambda_tax: 0.0
+    relation_policy: exact_only
+    freeze_macro_encoder_epochs: 2
+    freeze_macro_classifier_epochs: 2
+  - name: exact_alignment_main
+    # Stage 2 stays exact-only and very gentle. We keep one additional epoch of
+    # frozen macro encoder while enabling a small contrastive signal so the
+    # micro branch and projection heads adapt before macro features move again.
+    epochs: 8
+    lambda_macro_ce: 1.0
+    lambda_micro_ce: 0.5
+    lambda_supcon: 0.005
+    lambda_tax: 0.0
+    relation_policy: exact_only
+    freeze_macro_encoder_epochs: 1
+    freeze_macro_classifier_epochs: 0
+  - name: exact_alignment_refine
+    epochs: 3
+    lambda_macro_ce: 1.0
+    lambda_micro_ce: 0.5
+    lambda_supcon: 0.005
+    lambda_tax: 0.0
+    relation_policy: exact_only
+    freeze_macro_encoder_epochs: 0
+    freeze_macro_classifier_epochs: 0

@@ -1,0 +1,103 @@
+{
+  "actual_ratios": {
+    "test": 0.149932,
+    "train": 0.700087,
+    "val": 0.149981
+  },
+  "group_count": 763,
+  "protocol": "p2",
+  "ratios": {
+    "test": 0.15,
+    "train": 0.7,
+    "val": 0.15
+  },
+  "seed": 42,
+  "species_count": 72,
+  "split_summaries": {
+    "test": {
+      "actual_ratio": 0.149932,
+      "class_balance": {
+        "max_samples_per_species": 172,
+        "mean_samples_per_species": 44.7971,
+        "median_samples_per_species": 43,
+        "min_samples_per_species": 1,
+        "present_species_count": 69
+      },
+      "macro_phase_counts": {
+        "Phase1": 1377,
+        "Phase2": 1556
+      },
+      "modality_counts": {
+        "macro": 2933,
+        "micro": 158
+      },
+      "sample_count": 3091,
+      "species_count": 69,
+      "target_sample_count": 3092.4
+    },
+    "train": {
+      "actual_ratio": 0.700087,
+      "class_balance": {
+        "max_samples_per_species": 378,
+        "mean_samples_per_species": 200.4583,
+        "median_samples_per_species": 242.5,
+        "min_samples_per_species": 3,
+        "present_species_count": 72
+      },
+      "macro_phase_counts": {
+        "Phase1": 4431,
+        "Phase2": 9544
+      },
+      "modality_counts": {
+        "macro": 13975,
+        "micro": 458
+      },
+      "sample_count": 14433,
+      "species_count": 72,
+      "target_sample_count": 14431.2
+    },
+    "val": {
+      "actual_ratio": 0.149981,
+      "class_balance": {
+        "max_samples_per_species": 143,
+        "mean_samples_per_species": 44.8116,
+        "median_samples_per_species": 43,
+        "min_samples_per_species": 1,
+        "present_species_count": 69
+      },
+      "macro_phase_counts": {
+        "Phase1": 1392,
+        "Phase2": 1542
+      },
+      "modality_counts": {
+        "macro": 2934,
+        "micro": 158
+      },
+      "sample_count": 3092,
+      "species_count": 69,
+      "target_sample_count": 3092.4
+    }
+  },
+  "total_samples": 20616,
+  "warnings": {
+    "classes_in_train_but_missing_from_test": [
+      "Canarium album",
+      "Guibourtia coleosperma",
+      "Lophira alata"
+    ],
+    "classes_in_train_but_missing_from_val": [
+      "Erythrophleum ivorense",
+      "Guibourtia coleosperma",
+      "Khaya senegalensis"
+    ],
+    "classes_with_too_few_groups_for_full_coverage": [
+      "Canarium album",
+      "Erythrophleum ivorense",
+      "Guibourtia coleosperma",
+      "Khaya senegalensis"
+    ],
+    "classes_with_too_few_samples_for_nonzero_holdout": [],
+    "modality_warnings": [],
+    "ratio_imperfections": []
+  }
+}

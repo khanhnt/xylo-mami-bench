@@ -1,0 +1,12 @@
+base_configs:
+  - ./p3_align_v2.yaml
+
+experiment_name: p3_align_v2_grayscale
+output_dir: outputs/p3_align_v2_grayscale
+
+dataset:
+  input_mode: grayscale
+
+warmstart:
+  macro_checkpoint: outputs/p3_baseline_macro_grayscale/checkpoints/best.ckpt
+  micro_checkpoint: outputs/p3_baseline_micro_grayscale/checkpoints/best.ckpt

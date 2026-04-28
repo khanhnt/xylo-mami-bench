@@ -1,0 +1,56 @@
+base_configs:
+  - ./p3_align_v2.yaml
+
+experiment_name: p3_align_v2_rgbgray_fusion
+output_dir: outputs/p3_align_v2_rgbgray_fusion
+
+dataset:
+  batch_size: 24
+  eval_batch_size: 16
+  sampler:
+    classes_per_batch: 6
+    paired_species_per_batch: 3
+
+model:
+  architecture: rgbgray_late_fusion
+  macro_fusion_hidden_dim: 768
+  micro_fusion_hidden_dim: 768
+  fusion_dropout: 0.1
+  fusion_residual_scale: 0.1
+
+warmstart:
+  macro_checkpoint: null
+  micro_checkpoint: null
+  macro_rgb_checkpoint: outputs/p3_baseline_macro/checkpoints/best.ckpt
+  macro_gray_checkpoint: outputs/p3_baseline_macro_grayscale/checkpoints/best.ckpt
+  micro_rgb_checkpoint: outputs/p3_baseline_micro/checkpoints/best.ckpt
+  micro_gray_checkpoint: outputs/p3_baseline_micro_grayscale/checkpoints/best.ckpt
+  strict: false
+
+training:
+  max_epochs: 16
+  best_metric: macro_balanced_accuracy
+  best_metric_mode: max
+  best_metric_weights:
+    macro: 0.8
+    micro: 0.2
+
+stages:
+  - name: warmup_macro_prioritized
+    epochs: 2
+    lambda_macro_ce: 1.0
+    lambda_micro_ce: 0.4
+    lambda_supcon: 0.0
+    lambda_tax: 0.0
+    relation_policy: exact_only
+    freeze_macro_encoder_epochs: 2
+    freeze_macro_classifier_epochs: 2
+  - name: exact_alignment_main
+    epochs: 14
+    lambda_macro_ce: 1.0
+    lambda_micro_ce: 0.4
+    lambda_supcon: 0.01
+    lambda_tax: 0.0
+    relation_policy: exact_only
+    freeze_macro_encoder_epochs: 1
+    freeze_macro_classifier_epochs: 0

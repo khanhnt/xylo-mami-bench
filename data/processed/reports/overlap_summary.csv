@@ -1,0 +1,101 @@
+species,genus,family,protocol_group,overlap_type,protocol_usage,macro_image_count,micro_exact_image_count,micro_genus_related_species_count,micro_genus_related_image_count,micro_genus_related_species,macro_present,micro_exact_present
+Afzelia africana,Afzelia,,A,exact_species_overlap,"P1,P2,P3",272,11,2,20,Afzelia bipindensis|Afzelia cuanzensis,1,1
+Afzelia bella,Afzelia,,A,exact_species_overlap,"P1,P2,P3",400,6,2,20,Afzelia bipindensis|Afzelia cuanzensis,1,1
+Afzelia pachyloba,Afzelia,,A,exact_species_overlap,"P1,P2,P3",116,14,2,20,Afzelia bipindensis|Afzelia cuanzensis,1,1
+Albizia adianthifolia,Albizia,,A,exact_species_overlap,"P1,P2,P3",400,22,1,16,Albizia antunesiana,1,1
+Albizia ferruginea,Albizia,,A,exact_species_overlap,"P1,P2,P3",390,23,1,16,Albizia antunesiana,1,1
+Alstonia boonei,Alstonia,,A,exact_species_overlap,"P1,P2,P3",400,15,0,0,,1,1
+Amphimas pterocarpoides,Amphimas,,A,exact_species_overlap,"P1,P2,P3",391,13,1,9,Amphimas ferrugineus,1,1
+Autranella congolensis,Autranella,,A,exact_species_overlap,"P1,P2,P3",262,9,0,0,,1,1
+Canarium schweinfurthii,Canarium,,A,exact_species_overlap,"P1,P2,P3",402,14,0,0,,1,1
+Entandrophragma angolense,Entandrophragma,,A,exact_species_overlap,"P1,P2,P3",358,25,1,15,Entandrophragma candollei,1,1
+Entandrophragma cylindricum,Entandrophragma,,A,exact_species_overlap,"P1,P2,P3",425,21,1,15,Entandrophragma candollei,1,1
+Entandrophragma utile,Entandrophragma,,A,exact_species_overlap,"P1,P2,P3",398,25,1,15,Entandrophragma candollei,1,1
+Funtumia africana,Funtumia,,A,exact_species_overlap,"P1,P2,P3",400,18,0,0,,1,1
+Gilbertiodendron dewevrei,Gilbertiodendron,,A,exact_species_overlap,"P1,P2,P3",284,18,0,0,,1,1
+Guibourtia arnoldiana,Guibourtia,,A,exact_species_overlap,"P1,P2,P3",323,15,1,14,Guibourtia demeusei,1,1
+Holoptelea grandis,Holoptelea,,A,exact_species_overlap,"P1,P2,P3",360,13,0,0,,1,1
+Klainedoxa gabonensis,Klainedoxa,,A,exact_species_overlap,"P1,P2,P3",281,18,0,0,,1,1
+Lophira alata,Lophira,,A,exact_species_overlap,"P1,P2,P3",270,8,0,0,,1,1
+Mammea africana,Mammea,,A,exact_species_overlap,"P1,P2,P3",400,14,0,0,,1,1
+Milicia excelsa,Milicia,,A,exact_species_overlap,"P1,P2,P3",416,21,0,0,,1,1
+Millettia laurentii,Millettia,,A,exact_species_overlap,"P1,P2,P3",259,15,0,0,,1,1
+Morus mesozygia,Morus,,A,exact_species_overlap,"P1,P2,P3",400,17,0,0,,1,1
+Musanga cecropioides,Musanga,,A,exact_species_overlap,"P1,P2,P3",400,18,0,0,,1,1
+Nauclea diderrichii,Nauclea,,A,exact_species_overlap,"P1,P2,P3",383,13,0,0,,1,1
+Pericopsis elata,Pericopsis,,A,exact_species_overlap,"P1,P2,P3",366,9,0,0,,1,1
+Petersianthus macrocarpus,Petersianthus,,A,exact_species_overlap,"P1,P2,P3",399,15,0,0,,1,1
+Piptadeniastrum africanum,Piptadeniastrum,,A,exact_species_overlap,"P1,P2,P3",402,23,0,0,,1,1
+Pterocarpus soyauxii,Pterocarpus,,A,exact_species_overlap,"P1,P2,P3",486,37,1,21,Pterocarpus tinctorius,1,1
+Pycnanthus angolensis,Pycnanthus,,A,exact_species_overlap,"P1,P2,P3",400,5,0,0,,1,1
+Terminalia superba,Terminalia,,A,exact_species_overlap,"P1,P2,P3",265,25,0,0,,1,1
+Tieghemella heckelii,Tieghemella,,A,exact_species_overlap,"P1,P2,P3",400,10,0,0,,1,1
+Triplochiton scleroxylon,Triplochiton,,A,exact_species_overlap,"P1,P2,P3",402,16,0,0,,1,1
+Zanthoxylum gilletii,Zanthoxylum,,A,exact_species_overlap,"P1,P2,P3",400,11,1,16,Zanthoxylum lemairei,1,1
+Afzelia quanzensis,Afzelia,,B,genus_overlap_only,"P2,P3",369,0,2,20,Afzelia bipindensis|Afzelia cuanzensis,1,0
+Albizia chinensis,Albizia,,B,genus_overlap_only,"P2,P3",334,0,1,16,Albizia antunesiana,1,0
+Albizia glaberrima,Albizia,,B,genus_overlap_only,"P2,P3",360,0,1,16,Albizia antunesiana,1,0
+Albizia zygia,Albizia,,B,genus_overlap_only,"P2,P3",400,0,1,16,Albizia antunesiana,1,0
+Anthonotha fragrans,Anthonotha,,B,genus_overlap_only,"P2,P3",360,0,1,9,Anthonotha macrophylla,1,0
+Antrocaryon micraster,Antrocaryon,,B,genus_overlap_only,"P2,P3",399,0,1,27,Antrocaryon nannanii,1,0
+Canarium album,Canarium,,B,genus_overlap_only,"P2,P3",287,0,0,0,,1,0
+Canarium bengalense,Canarium,,B,genus_overlap_only,"P2,P3",308,0,0,0,,1,0
+Celtis adolfi-friderici,Celtis,,B,genus_overlap_only,"P2,P3",360,0,1,16,Celtis gomphophylla,1,0
+Celtis mildbraedii,Celtis,,B,genus_overlap_only,"P2,P3",400,0,1,16,Celtis gomphophylla,1,0
+Chrysophyllum perpulchrum,Chrysophyllum,,B,genus_overlap_only,"P2,P3",360,0,2,16,Chrysophyllum africanum|Chrysophyllum lacourtianum,1,0
+Diospyros salletii,Diospyros,,B,genus_overlap_only,"P2,P3",336,0,1,12,Diospyros crassiflora,1,0
+Erythrophleum ivorense,Erythrophleum,,B,genus_overlap_only,"P2,P3",266,0,1,14,Erythrophleum suaveolens,1,0
+Funtumia elastica,Funtumia,,B,genus_overlap_only,"P2,P3",400,0,0,0,,1,0
+Guibourtia coleosperma,Guibourtia,,B,genus_overlap_only,"P2,P3",360,0,1,14,Guibourtia demeusei,1,0
+Khaya grandifoliola,Khaya,,B,genus_overlap_only,"P2,P3",400,0,1,23,Khaya anthotheca,1,0
+Khaya ivorensis,Khaya,,B,genus_overlap_only,"P2,P3",400,0,1,23,Khaya anthotheca,1,0
+Khaya senegalensis,Khaya,,B,genus_overlap_only,"P2,P3",265,0,1,23,Khaya anthotheca,1,0
+Nesogordonia papaverifera,Nesogordonia,,B,genus_overlap_only,"P2,P3",400,0,1,9,Nesogordonia kabingaensis,1,0
+Pterocarpus erinaceus,Pterocarpus,,B,genus_overlap_only,"P2,P3",336,0,1,21,Pterocarpus tinctorius,1,0
+Pterocarpus macrocarpus,Pterocarpus,,B,genus_overlap_only,"P2,P3",432,0,1,21,Pterocarpus tinctorius,1,0
+Terminalia ivorensis,Terminalia,,B,genus_overlap_only,"P2,P3",400,0,0,0,,1,0
+Myroxylon balsamum,Myroxylon,,C,macro_only_non_overlap,P3,570,0,0,0,,1,0
+Myroxylon peruiferum,Myroxylon,,C,macro_only_non_overlap,P3,337,0,0,0,,1,0
+Detarium macrocarpum,Detarium,,C,macro_only_non_overlap,P3,340,0,0,0,,1,0
+Pachyelasma tessmannii,Pachyelasma,,C,macro_only_non_overlap,P3,357,0,0,0,,1,0
+Dalbergia oliveri,Dalbergia,,C,macro_only_non_overlap,P3,316,0,0,0,,1,0
+Xylia xylocarpa,Xylia,,C,macro_only_non_overlap,P3,748,0,0,0,,1,0
+Qualea paraensis,Qualea,,C,macro_only_non_overlap,P3,350,0,0,0,,1,0
+Hevea brasiliensis,Hevea,,C,macro_only_non_overlap,P3,843,0,0,0,,1,0
+Cinnamomum camphora,Cinnamomum,,C,macro_only_non_overlap,P3,348,0,0,0,,1,0
+Lithocarpus ducampii,Lithocarpus,,C,macro_only_non_overlap,P3,504,0,0,0,,1,0
+Magnolia hypolampra,Magnolia,,C,macro_only_non_overlap,P3,438,0,0,0,,1,0
+Toona sureni,Toona,,C,macro_only_non_overlap,P3,192,0,0,0,,1,0
+Sindora cochinchinensis,Sindora,,C,macro_only_non_overlap,P3,354,0,0,0,,1,0
+Callitris columellaris,Callitris,,C,macro_only_non_overlap,P3,416,0,0,0,,1,0
+Didelotia africana,Didelotia,,C,macro_only_non_overlap,P3,388,0,0,0,,1,0
+Tetraberlinia bifoliolata,Tetraberlinia,,C,macro_only_non_overlap,P3,404,0,0,0,,1,0
+Hymenaea courbaril,Hymenaea,,C,macro_only_non_overlap,P3,412,0,0,0,,1,0
+Distemonanthus benthamianus,Distemonanthus,,C,macro_only_non_overlap,P3,302,0,0,0,,1,0
+Burretiodendron tonkinense,Burretiodendron,,C,macro_only_non_overlap,P3,283,0,0,0,,1,0
+Cylicodiscus gabunensis,Cylicodiscus,,C,macro_only_non_overlap,P3,351,0,0,0,,1,0
+Fokienia hodginsii,Fokienia,,C,macro_only_non_overlap,P3,412,0,0,0,,1,0
+Cunninghamia lanceolata,Cunninghamia,,C,macro_only_non_overlap,P3,450,0,0,0,,1,0
+Quercus robur,Quercus,,C,macro_only_non_overlap,P3,414,0,0,0,,1,0
+Quercus rubra,Quercus,,C,macro_only_non_overlap,P3,441,0,0,0,,1,0
+Fraxinus excelsior,Fraxinus,,C,macro_only_non_overlap,P3,512,0,0,0,,1,0
+Dalbergia cochinchinensis,Dalbergia,,C,macro_only_non_overlap,P3,354,0,0,0,,1,0
+Acer saccharinum,Acer,,C,macro_only_non_overlap,P3,256,0,0,0,,1,0
+Eucalyptus grandis,Eucalyptus,,C,macro_only_non_overlap,P3,320,0,0,0,,1,0
+Eucalyptus saligna,Eucalyptus,,C,macro_only_non_overlap,P3,295,0,0,0,,1,0
+Guarea cedrata,Guarea,,C,macro_only_non_overlap,P3,335,0,0,0,,1,0
+Prunus serotina,Prunus,,C,macro_only_non_overlap,P3,274,0,0,0,,1,0
+Clarisia racemosa,Clarisia,,C,macro_only_non_overlap,P3,304,0,0,0,,1,0
+Acacia melanoxylon,Acacia,,C,macro_only_non_overlap,P3,267,0,0,0,,1,0
+Hopea pierrei,Hopea,,C,macro_only_non_overlap,P3,307,0,0,0,,1,0
+Samanea saman,Samanea,,C,macro_only_non_overlap,P3,326,0,0,0,,1,0
+Artocarpus heterophyllus,Artocarpus,,C,macro_only_non_overlap,P3,296,0,0,0,,1,0
+Colophospermum mopane,Colophospermum,,C,macro_only_non_overlap,P3,306,0,0,0,,1,0
+Tectona grandis,Tectona,,C,macro_only_non_overlap,P3,290,0,0,0,,1,0
+Bagassa guianensis,Bagassa,,C,macro_only_non_overlap,P3,622,0,0,0,,1,0
+Aglaia cucullata,Aglaia,,C,macro_only_non_overlap,P3,301,0,0,0,,1,0
+Dicorynia guianensis,Dicorynia,,C,macro_only_non_overlap,P3,301,0,0,0,,1,0
+Bombax ceiba,Bombax,,C,macro_only_non_overlap,P3,298,0,0,0,,1,0
+Cryptomeria japonica,Cryptomeria,,C,macro_only_non_overlap,P3,335,0,0,0,,1,0
+Dalbergia melanoxylon,Dalbergia,,C,macro_only_non_overlap,P3,291,0,0,0,,1,0
+Dipterocarpus costatus,Dipterocarpus,,C,macro_only_non_overlap,P3,340,0,0,0,,1,0

@@ -1,0 +1,78 @@
+base_configs:
+  - ../train/align.yaml
+
+experiment_name: p2_align_v2
+output_dir: outputs/p2_align_v2
+
+dataset:
+  train_split_csv: data/processed/splits/p2_train.csv
+  val_split_csv: data/processed/splits/p2_val.csv
+  test_split_csv: data/processed/splits/p2_test.csv
+
+model:
+  macro_num_classes: 55
+  micro_num_classes: 50
+
+warmstart:
+  macro_checkpoint: outputs/p2_baseline_macro/checkpoints/best.ckpt
+  micro_checkpoint: outputs/p3_baseline_micro/checkpoints/best.ckpt
+  strict: false
+
+optimizer:
+  macro_encoder_lr: 0.000005
+  micro_encoder_lr: 0.00004
+  macro_projection_lr: 0.00005
+  micro_projection_lr: 0.0001
+  macro_classifier_lr: 0.00001
+  micro_classifier_lr: 0.00005
+
+training:
+  max_epochs: 14
+  best_metric: macro_balanced_accuracy
+  best_metric_mode: max
+  best_metric_weights:
+    macro: 0.8
+    micro: 0.2
+  max_eval_batches: null
+
+loss:
+  taxonomy_similarity_floor: 0.35
+  taxonomy_pair_weight: 0.5
+  relaxed_negative_weight: 0.75
+
+stages:
+  - name: warmup_macro_prioritized
+    # Conservative P2 v2 choice:
+    # freeze both macro encoder and macro classifier so the warm-started macro
+    # baseline stays fixed while the micro branch adapts to the harder P2 label
+    # space without immediately disturbing species-level macro discrimination.
+    epochs: 2
+    lambda_macro_ce: 1.0
+    lambda_micro_ce: 0.4
+    lambda_supcon: 0.0
+    lambda_tax: 0.0
+    relation_policy: exact_only
+    freeze_macro_encoder_epochs: 2
+    freeze_macro_classifier_epochs: 2
+  - name: exact_alignment_main
+    # Keep exact pairs as the only strong positives before any genus-aware
+    # structure is introduced.
+    epochs: 8
+    lambda_macro_ce: 1.0
+    lambda_micro_ce: 0.4
+    lambda_supcon: 0.005
+    lambda_tax: 0.0
+    relation_policy: exact_only
+    freeze_macro_encoder_epochs: 1
+    freeze_macro_classifier_epochs: 0
+  - name: late_relaxed_genus_refine
+    # Add only very weak genus structure late, using relaxed negatives rather
+    # than strong genus-soft positives.
+    epochs: 4
+    lambda_macro_ce: 1.0
+    lambda_micro_ce: 0.4
+    lambda_supcon: 0.005
+    lambda_tax: 0.005
+    relation_policy: exact_plus_genus_relaxed_negative
+    freeze_macro_encoder_epochs: 0
+    freeze_macro_classifier_epochs: 0

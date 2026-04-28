@@ -1,0 +1,75 @@
+experiment_name: baseline
+seed: 42
+output_dir: outputs/baseline
+device: auto
+
+dataset:
+  mode: macro_classification
+  train_split_csv: data/processed/splits/p1_train.csv
+  val_split_csv: data/processed/splits/p1_val.csv
+  test_split_csv: data/processed/splits/p1_test.csv
+  image_size: 384
+  input_mode: rgb
+  macro_input_mode: null
+  micro_input_mode: null
+  batch_size: 16
+  eval_batch_size: 32
+  num_workers: 4
+  image_root_override:
+    macro: null
+    micro: null
+
+model:
+  architecture: standard
+  backbone_name: convnext_small
+  gray_backbone_name: null
+  num_classes: 33
+  pretrained: true
+  gray_pretrained: null
+  dropout: 0.2
+  fusion_hidden_dim: null
+  fusion_dropout: 0.0
+  fusion_residual_scale: 0.1
+  freeze_backbone: false
+  trainable_backbone_patterns: []
+
+warmstart:
+  rgb_checkpoint: null
+  gray_checkpoint: null
+  strict: false
+
+optimizer:
+  backbone_lr: 0.00005
+  head_lr: 0.0005
+  betas: [0.9, 0.999]
+  eps: 0.00000001
+  weight_decay: 0.05
+
+scheduler:
+  min_lr_ratio: 0.01
+  warmup_steps: null
+  warmup_epochs: 3
+
+training:
+  max_epochs: 30
+  max_steps: null
+  amp: true
+  grad_clip_norm: 1.0
+  log_every_n_steps: 20
+  validate_every_n_epochs: 1
+  save_every_n_epochs: 1
+  early_stopping_patience: 8
+  early_stopping_min_delta: 0.0
+  best_metric: balanced_accuracy
+  best_metric_mode: max
+  max_eval_batches: null
+  resume_from: null
+
+loss:
+  label_smoothing: 0.1
+  class_weights: null
+
+evaluation:
+  checkpoint_path: null
+  split_csv: null
+  split_name: test

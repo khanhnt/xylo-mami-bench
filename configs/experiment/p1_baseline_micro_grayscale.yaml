@@ -1,0 +1,8 @@
+base_configs:
+  - ./p1_baseline_micro.yaml
+
+experiment_name: p1_baseline_micro_grayscale
+output_dir: outputs/p1_baseline_micro_grayscale
+
+dataset:
+  input_mode: grayscale

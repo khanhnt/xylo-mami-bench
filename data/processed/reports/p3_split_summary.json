@@ -1,0 +1,148 @@
+{
+  "actual_ratios": {
+    "test": 0.149989,
+    "train": 0.700021,
+    "val": 0.149989
+  },
+  "group_count": 1306,
+  "protocol": "p3",
+  "ratios": {
+    "test": 0.15,
+    "train": 0.7,
+    "val": 0.15
+  },
+  "seed": 42,
+  "species_count": 117,
+  "split_summaries": {
+    "test": {
+      "actual_ratio": 0.149989,
+      "class_balance": {
+        "max_samples_per_species": 214,
+        "mean_samples_per_species": 55.7129,
+        "median_samples_per_species": 43,
+        "min_samples_per_species": 1,
+        "present_species_count": 101
+      },
+      "macro_phase_counts": {
+        "Phase1": 3568,
+        "Phase2": 1943
+      },
+      "modality_counts": {
+        "macro": 5511,
+        "micro": 116
+      },
+      "sample_count": 5627,
+      "species_count": 101,
+      "target_sample_count": 5627.4
+    },
+    "train": {
+      "actual_ratio": 0.700021,
+      "class_balance": {
+        "max_samples_per_species": 603,
+        "mean_samples_per_species": 224.4615,
+        "median_samples_per_species": 242,
+        "min_samples_per_species": 3,
+        "present_species_count": 117
+      },
+      "macro_phase_counts": {
+        "Phase1": 14217,
+        "Phase2": 11503
+      },
+      "modality_counts": {
+        "macro": 25720,
+        "micro": 542
+      },
+      "sample_count": 26262,
+      "species_count": 117,
+      "target_sample_count": 26261.2
+    },
+    "val": {
+      "actual_ratio": 0.149989,
+      "class_balance": {
+        "max_samples_per_species": 201,
+        "mean_samples_per_species": 55.7129,
+        "median_samples_per_species": 43,
+        "min_samples_per_species": 1,
+        "present_species_count": 101
+      },
+      "macro_phase_counts": {
+        "Phase1": 3427,
+        "Phase2": 2084
+      },
+      "modality_counts": {
+        "macro": 5511,
+        "micro": 116
+      },
+      "sample_count": 5627,
+      "species_count": 101,
+      "target_sample_count": 5627.4
+    }
+  },
+  "total_samples": 37516,
+  "warnings": {
+    "classes_in_train_but_missing_from_test": [
+      "Acacia melanoxylon",
+      "Acer saccharinum",
+      "Clarisia racemosa",
+      "Dalbergia cochinchinensis",
+      "Detarium macrocarpum",
+      "Eucalyptus saligna",
+      "Guarea cedrata",
+      "Guibourtia coleosperma",
+      "Hopea pierrei",
+      "Hymenaea courbaril",
+      "Khaya senegalensis",
+      "Lophira alata",
+      "Myroxylon peruiferum",
+      "Prunus serotina",
+      "Qualea paraensis",
+      "Tectona grandis"
+    ],
+    "classes_in_train_but_missing_from_val": [
+      "Acer saccharinum",
+      "Artocarpus heterophyllus",
+      "Canarium album",
+      "Colophospermum mopane",
+      "Dalbergia cochinchinensis",
+      "Detarium macrocarpum",
+      "Erythrophleum ivorense",
+      "Eucalyptus grandis",
+      "Eucalyptus saligna",
+      "Guarea cedrata",
+      "Guibourtia coleosperma",
+      "Magnolia hypolampra",
+      "Myroxylon peruiferum",
+      "Prunus serotina",
+      "Samanea saman",
+      "Toona sureni"
+    ],
+    "classes_with_too_few_groups_for_full_coverage": [
+      "Acacia melanoxylon",
+      "Acer saccharinum",
+      "Artocarpus heterophyllus",
+      "Canarium album",
+      "Clarisia racemosa",
+      "Colophospermum mopane",
+      "Dalbergia cochinchinensis",
+      "Detarium macrocarpum",
+      "Erythrophleum ivorense",
+      "Eucalyptus grandis",
+      "Eucalyptus saligna",
+      "Guarea cedrata",
+      "Guibourtia coleosperma",
+      "Hopea pierrei",
+      "Hymenaea courbaril",
+      "Khaya senegalensis",
+      "Magnolia hypolampra",
+      "Myroxylon peruiferum",
+      "Prunus serotina",
+      "Qualea paraensis",
+      "Samanea saman",
+      "Tectona grandis",
+      "Toona sureni"
+    ],
+    "classes_with_too_few_samples_for_nonzero_holdout": [],
+    "modality_warnings": [],
+    "ratio_imperfections": []
+  }
+}
