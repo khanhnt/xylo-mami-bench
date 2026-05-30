@@ -1,0 +1,34 @@
+base_configs:
+  - p1_align_v2.yaml
+
+experiment_name: p1_align_ablation_ce_only_joint_warmstart
+output_dir: outputs/p1_align_ablation_ce_only_joint_warmstart
+
+stages:
+  - name: warmup_macro_prioritized
+    epochs: 2
+    lambda_macro_ce: 1.0
+    lambda_micro_ce: 0.5
+    lambda_supcon: 0.0
+    lambda_tax: 0.0
+    relation_policy: exact_only
+    freeze_macro_encoder_epochs: 2
+    freeze_macro_classifier_epochs: 2
+  - name: ce_joint_main
+    epochs: 8
+    lambda_macro_ce: 1.0
+    lambda_micro_ce: 0.5
+    lambda_supcon: 0.0
+    lambda_tax: 0.0
+    relation_policy: exact_only
+    freeze_macro_encoder_epochs: 1
+    freeze_macro_classifier_epochs: 0
+  - name: ce_joint_refine
+    epochs: 3
+    lambda_macro_ce: 1.0
+    lambda_micro_ce: 0.5
+    lambda_supcon: 0.0
+    lambda_tax: 0.0
+    relation_policy: exact_only
+    freeze_macro_encoder_epochs: 0
+    freeze_macro_classifier_epochs: 0

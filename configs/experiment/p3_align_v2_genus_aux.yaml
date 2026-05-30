@@ -1,0 +1,13 @@
+base_configs:
+  - ./p3_align_v2.yaml
+
+experiment_name: p3_align_v2_genus_aux
+output_dir: outputs/p3_align_v2_genus_aux
+
+genus_aux:
+  enabled: true
+  loss_weight: 0.05
+  macro_weight: 0.25
+  micro_weight: 0.75
+  dropout: 0.1
+  label_smoothing: 0.0

@@ -1,0 +1,21 @@
+base_configs:
+  - ../train/baseline.yaml
+
+experiment_name: p3_baseline_macro_resnet50
+output_dir: outputs/p3_baseline_macro_resnet50
+
+dataset:
+  mode: macro_classification
+  train_split_csv: data/processed/splits/p3_train.csv
+  val_split_csv: data/processed/splits/p3_val.csv
+  test_split_csv: data/processed/splits/p3_test.csv
+  image_size: 384
+  batch_size: 16
+  eval_batch_size: 32
+
+model:
+  backbone_name: resnet50
+  num_classes: 100
+
+evaluation:
+  split_name: test

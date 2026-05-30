@@ -1,0 +1,5 @@
+base_configs:
+  - p1_align_v2.yaml
+
+experiment_name: p1_align_ablation_exact_only
+output_dir: outputs/p1_align_ablation_exact_only

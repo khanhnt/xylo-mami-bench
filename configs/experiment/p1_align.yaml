@@ -1,0 +1,37 @@
+base_configs:
+  - ../train/align.yaml
+
+experiment_name: p1_align
+output_dir: outputs/p1_align
+
+dataset:
+  train_split_csv: data/processed/splits/p1_train.csv
+  val_split_csv: data/processed/splits/p1_val.csv
+  test_split_csv: data/processed/splits/p1_test.csv
+
+model:
+  macro_num_classes: 33
+  micro_num_classes: 33
+
+stages:
+  - name: warmup_macro_prioritized
+    epochs: 4
+    lambda_macro_ce: 1.0
+    lambda_micro_ce: 0.5
+    lambda_supcon: 0.0
+    lambda_tax: 0.0
+    relation_policy: exact_only
+  - name: exact_alignment
+    epochs: 8
+    lambda_macro_ce: 1.0
+    lambda_micro_ce: 1.0
+    lambda_supcon: 0.5
+    lambda_tax: 0.0
+    relation_policy: exact_only
+  - name: exact_refine
+    epochs: 12
+    lambda_macro_ce: 1.0
+    lambda_micro_ce: 1.0
+    lambda_supcon: 0.75
+    lambda_tax: 0.0
+    relation_policy: exact_only

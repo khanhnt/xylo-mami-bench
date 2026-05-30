@@ -1,0 +1,38 @@
+base_configs:
+  - ./p3_align_v3_rgbgray_gated.yaml
+
+experiment_name: p3_align_v4_rgbgray_gated_tuned
+output_dir: outputs/p3_align_v4_rgbgray_gated_tuned
+
+dataset:
+  batch_size: 32
+  eval_batch_size: 24
+  sampler:
+    classes_per_batch: 8
+    paired_species_per_batch: 4
+
+loss:
+  # v3 improved macro->micro retrieval, but likely regularized the shared
+  # space too strongly for micro->macro retrieval. Reduce the cross-view
+  # agreement pressure while keeping the gated fusion architecture.
+  rgbgray_consistency_weight: 0.03
+
+stages:
+  - name: warmup_macro_prioritized
+    epochs: 2
+    lambda_macro_ce: 1.0
+    lambda_micro_ce: 0.4
+    lambda_supcon: 0.0
+    lambda_tax: 0.0
+    relation_policy: exact_only
+    freeze_macro_encoder_epochs: 2
+    freeze_macro_classifier_epochs: 2
+  - name: exact_alignment_main
+    epochs: 14
+    lambda_macro_ce: 1.0
+    lambda_micro_ce: 0.5
+    lambda_supcon: 0.01
+    lambda_tax: 0.0
+    relation_policy: exact_only
+    freeze_macro_encoder_epochs: 1
+    freeze_macro_classifier_epochs: 0

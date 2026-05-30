@@ -1,0 +1,42 @@
+base_configs:
+  - ../train/align.yaml
+
+experiment_name: p2_align
+output_dir: outputs/p2_align
+
+dataset:
+  train_split_csv: data/processed/splits/p2_train.csv
+  val_split_csv: data/processed/splits/p2_val.csv
+  test_split_csv: data/processed/splits/p2_test.csv
+
+model:
+  macro_num_classes: 55
+  micro_num_classes: 50
+
+loss:
+  taxonomy_similarity_floor: 0.30
+  taxonomy_pair_weight: 1.0
+  relaxed_negative_weight: 0.35
+
+stages:
+  - name: warmup_macro_prioritized
+    epochs: 4
+    lambda_macro_ce: 1.0
+    lambda_micro_ce: 0.5
+    lambda_supcon: 0.0
+    lambda_tax: 0.0
+    relation_policy: exact_only
+  - name: exact_alignment
+    epochs: 8
+    lambda_macro_ce: 1.0
+    lambda_micro_ce: 1.0
+    lambda_supcon: 0.5
+    lambda_tax: 0.0
+    relation_policy: exact_only
+  - name: genus_relaxed_refine
+    epochs: 12
+    lambda_macro_ce: 1.0
+    lambda_micro_ce: 1.0
+    lambda_supcon: 0.75
+    lambda_tax: 0.05
+    relation_policy: exact_plus_genus_relaxed_negative
